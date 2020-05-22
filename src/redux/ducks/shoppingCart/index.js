@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useDispatch } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 
 //action definition
 const GET_PRODUCTS = "products/GET_PRODUCTS"
@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
 //action creators
 function getProducts(){
     return dispatch =>{
-        axios.get('./products').then(resp =>{
+        axios.get('/products').then(resp =>{
             dispatch({
             type: GET_PRODUCTS,
             payload: resp.data
@@ -42,3 +42,5 @@ export function useShoppingCart (){
 
     return { products, getPictures }
 }
+
+

@@ -1,2 +1,52 @@
-html {box-sizing:border-box;}
-*, *::before, *::after {box-sizing:inherit;}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+  }
+
+
+.itemContainer{
+    width: 1010px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.itemPicture{
+    width: 230px;
+    height: 330px;
+
+}
+
+.itemList{
+    border-style: solid;
+    padding: 10px;
+    border-width: 1px;
+
+}
+
+.addBtn{
+    width: 100%;
+    border: none;
+    color: white;
+    background-color: black;
+    padding: 15px 0;
+    margin-top: 10px;
+}
+
+.pictureTitle{
+    display: flex;
+    justify-content: center;
+}
+
+.itemPrice{
+    display: flex;
+    justify-content: center;
+}
+
+.itemInstallment{
+    display: flex;
+    justify-content: center;
+}
+
