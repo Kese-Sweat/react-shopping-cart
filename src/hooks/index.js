@@ -1,1 +1,2 @@
-export { useExample } from "../redux/ducks/example"
+
+export { useShoppingCart } from "../redux/ducks/shoppingCart"
