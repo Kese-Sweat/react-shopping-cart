@@ -1,14 +1,17 @@
 import React, { useEffect } from "react"
-import { useShoppingCart} from "../hooks/index"
+import { useShoppingCart, useCart} from "../hooks/index"
 import "../styles/App.css"
-import Cart from "./Cart"
+
 
 
 function Pictures () {
     const {getPictures, products} = useShoppingCart()
+    console.log(useCart()) 
+    const {addCart} = useCart()
 
     useEffect(() => {
-        getPictures ()
+        getPictures()
+        addCart()
     },[])
 
 
@@ -24,7 +27,7 @@ function Pictures () {
         </div>
         
         {products.map(item =>{
-            return <div className="itemList">
+            return <div onClick={() => addCart(item)} className="itemList">
                         <img className="itemPicture" src={item.img.normal}></img>
                         <li className="pictureTitle">{item.title}</li>
                         <li className="itemPrice">{item.currencyFormat}{item.price}</li>
