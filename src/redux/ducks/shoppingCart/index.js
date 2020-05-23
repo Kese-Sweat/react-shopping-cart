@@ -4,9 +4,11 @@ import { useSelector, useDispatch } from "react-redux"
 //action definition
 const GET_PRODUCTS = "products/GET_PRODUCTS"
 
+
 //initial state
 const initialState = {
     products: [],
+    cart: [],
     
 }
 
@@ -17,12 +19,13 @@ export default (state = initialState, action) => {
             return {...state, products: action.payload}
             default:
                 return state
+        
     }
 }
 
 //action creators
 function getProducts(){
-    return dispatch =>{
+    return dispatch => {
         axios.get('/products').then(resp =>{
             dispatch({
             type: GET_PRODUCTS,
@@ -32,7 +35,7 @@ function getProducts(){
     }
 }
 
-//custon hook
+//custom hook
 
 export function useShoppingCart (){
     const dispatch = useDispatch()

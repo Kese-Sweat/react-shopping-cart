@@ -50,3 +50,24 @@
     justify-content: center;
 }
 
+.addBtn:hover{
+    background-color: gold;
+}
+
+.itemHeader{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.shoppingCartImg{
+    background-color: gold;
+
+}
+
+.shoppingCart{
+    display: flex;
+    justify-content: flex-end;
+}

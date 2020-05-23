@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { useShoppingCart} from "../hooks/index"
 import "../styles/App.css"
-
+import Cart from "./Cart"
 
 
 function Pictures () {
@@ -13,6 +13,16 @@ function Pictures () {
 
 
     return(<div className="itemContainer">
+        <div className="itemHeader">
+            <span>Product(s) found</span>
+            <select>
+                <option value>Select</option>
+                <option value="lowestprice">Lowest to highest</option>
+                <option value="highestprice">Highest to lowest</option>
+            </select>
+
+        </div>
+        
         {products.map(item =>{
             return <div className="itemList">
                         <img className="itemPicture" src={item.img.normal}></img>
@@ -21,9 +31,11 @@ function Pictures () {
                         <li className="itemInstallment"> or {item.installments}</li>
                         <button className="addBtn">Add to cart</button>
                     </div>
+                   
         })}
-
+        
     </div>
+
 
 
 
