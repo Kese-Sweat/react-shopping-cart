@@ -1,20 +1,27 @@
 import React, { useEffect } from "react"
 import { GiShoppingCart }  from "react-icons/gi"
-import {  useCart } from "../hooks/index"
+import {  useCart, useShoppingCart} from "../hooks/index"
 
 
 
-function Cart (){
+
+function Cart () {
     const { cart } = useCart()
+    console.log(cart) /// cart is undefined
+    
 
     
     
 
-return(<div >
+return(<div>
     <span className="shoppingCart" >< GiShoppingCart className="shoppingCartImg" size={50}/></span>
-    
-        <span>{cart}</span>
-    
+
+    {cart.map(item => {
+        return<div>
+                    <li>{item.title}</li>
+                    <li>test</li>
+                </div>
+    })}
 
 
 </div>
@@ -22,3 +29,4 @@ return(<div >
 )}
 
 export default Cart
+

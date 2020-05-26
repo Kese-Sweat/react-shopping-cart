@@ -1,5 +1,5 @@
-import axios from "axios"
 import { useSelector, useDispatch } from "react-redux"
+
 
 //action definition
 const TO_CART= "cart/TO_CART"
@@ -34,7 +34,7 @@ function addToCart (item) {
 
 //custom hook
 
-export function useCart (){
+export function useCart () {
     const dispatch = useDispatch()
     const cart = useSelector(appState => appState.cartState.cart)
 
