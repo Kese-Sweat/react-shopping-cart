@@ -11,7 +11,7 @@ function Pictures () {
 
     useEffect(() => {
         getPictures()
-        addCart()
+        
     },[])
 
 
