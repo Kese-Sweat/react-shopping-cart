@@ -35,6 +35,13 @@
     margin-top: 10px;
 }
 
+.cartContainer{
+    width: 450px;
+}
+.leftSideCart{
+    display: flex;
+}
+
 .pictureTitle{
     display: flex;
     justify-content: center;
@@ -70,4 +77,18 @@
 .shoppingCart{
     display: flex;
     justify-content: flex-end;
+}
+
+.cartContainer{
+    background-color: hotpink;
+}
+
+.cartContent{
+    display: flex;
+    justify-content: space-between;
+}
+
+.thumbImg{
+    width: 60px;
+    height: 86px;
 }
