@@ -15,10 +15,11 @@ const initialState = {
 export default (state = initialState, action) => {
     switch (action.type){
         case TO_CART:
-            return {...state, cart: [...state.cart, action.payload]}
+            return {...state, cart: [...state.cart, action.payload]} // returning an updated state in an array
         case DELETE_ITEM:
-            const updateCart = state.cart.filter(item => item.id !==action.payload)
-            return {...state, cart: [...state.cart, updateCart]}
+            // setting updateCart to a filter so item will delete if id and action.payload does not match
+            const updateCart = state.cart.filter(item => item.id !== action.payload) 
+            return {...state, cart: updateCart}
                 default:
                     return state
                 
@@ -36,7 +37,7 @@ function addToCart (item) {
 
 function removeFromCart (item) {
     return {
-        type: TO_CART,
+        type: DELETE_ITEM,
         payload: item
     }
 }

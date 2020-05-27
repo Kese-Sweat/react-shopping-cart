@@ -6,7 +6,7 @@ import {  useCart, useShoppingCart} from "../hooks/index"
 
 
 function Cart () {
-    const { cart } = useCart()
+    const { cart, reduceCart } = useCart()
     console.log(cart)
 
     
@@ -31,7 +31,7 @@ return(<div className="cartContainer">
             <div className="rightSideCart">
 
                <div>
-                   <p className="xCursor">X</p>
+                   <p className="X" onClick={() => reduceCart(item.id)}>X</p>
                    <p>{item.price}</p>
                </div>
                <div>

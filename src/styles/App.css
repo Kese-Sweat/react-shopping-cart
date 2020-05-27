@@ -80,7 +80,7 @@
 }
 
 .cartContainer{
-    background-color: hotpink;
+    background-color: gold;
 }
 
 .cartContent{
@@ -95,8 +95,9 @@
 .theCart{
     display: flex;  
     justify-content: space-between;
+    border-bottom-style: solid;
 }
 
-.xCursor{
+.X{
     cursor: pointer;
 }
