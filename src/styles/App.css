@@ -84,11 +84,19 @@
 }
 
 .cartContent{
-    display: flex;
-    justify-content: space-between;
+    
 }
 
 .thumbImg{
     width: 60px;
     height: 86px;
+}
+
+.theCart{
+    display: flex;  
+    justify-content: space-between;
+}
+
+.xCursor{
+    cursor: pointer;
 }

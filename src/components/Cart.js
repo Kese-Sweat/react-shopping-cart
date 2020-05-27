@@ -7,42 +7,43 @@ import {  useCart, useShoppingCart} from "../hooks/index"
 
 function Cart () {
     const { cart } = useCart()
-    console.log(cart) /// cart is undefined
-    
+    console.log(cart)
 
     
     
 
 return(<div className="cartContainer">
     <span className="shoppingCart" >< GiShoppingCart className="shoppingCartImg" size={50}/></span>
+
 <div className="cartContent">
     {cart.map(item => {
-        return<div className="leftSideCart">
-                 <div>
-                     <img className="thumbImg" src={item.img.thumb}></img>
+        return (<div className="theCart">
+            <div className="leftSideCart">
+                    <div>
+                        <img className="thumbImg" src={item.img.thumb}></img>
                     </div>
                     <div>
-                        <li>{item.title}</li>
-                     <li>{item.style}</li>
+                        <p>{item.title}</p>
+                        <p>{item.style}</p>
                         <span>Quantity</span>
                     </div>
-                </div>
-    })}
+            </div>
+            <div className="rightSideCart">
 
-    {cart.map(item => {
-        return<div className="rightSideCart">
-                        <p>X</p>
-                        <p>{item.price}</p>
-                    <div>
-                        <button>-</button>
-                        <button>+</button>
-                    </div>
-
-                </div>
+               <div>
+                   <p className="xCursor">X</p>
+                   <p>{item.price}</p>
+               </div>
+               <div>
+                   <button>-</button>
+                   <button>+</button>
+               </div>
+            </div>
+            </div>
+        )
+        
     })}
 </div>
-
-
 </div>
 
 )}
