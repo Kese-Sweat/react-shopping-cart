@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux"
 //action definition
 const TO_CART= "cart/TO_CART"
 const DELETE_ITEM= "delete/DELETE_ITEM"
+const TOTAL_PRICE= "total/TOTAL_PRICE"
 
 //initial state
 const initialState = {
@@ -43,6 +44,7 @@ function removeFromCart (item) {
 }
 
 
+
 //custom hook
 
 export function useCart () {
@@ -51,9 +53,11 @@ export function useCart () {
 
     const addCart = (item) => dispatch(addToCart(item))
     const reduceCart = (item) => dispatch(removeFromCart(item))
+    const cartTotal = cart.reduce((total, item) => total + item.price, 0)
+    
     
 
-    return { cart, addCart, reduceCart }
+    return { cart, addCart, reduceCart, cartTotal }
 }
 
 

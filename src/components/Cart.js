@@ -6,7 +6,7 @@ import {  useCart, useShoppingCart} from "../hooks/index"
 
 
 function Cart () {
-    const { cart, reduceCart } = useCart()
+    const { cart, reduceCart, cartTotal } = useCart()
     console.log(cart)
 
     
@@ -25,13 +25,13 @@ return(<div className="cartContainer">
                     <div>
                         <p>{item.title}</p>
                         <p>{item.style}</p>
-                        <span>Quantity</span>
+                        <span></span>
                     </div>
             </div>
             <div className="rightSideCart">
 
                <div>
-                   <p className="X" onClick={() => reduceCart(item.id)}>X</p>
+                   <p className="X" onClick={() => reduceCart(item.id)}>X</p>  
                    <p>{item.price}</p>
                </div>
                <div>
@@ -43,6 +43,8 @@ return(<div className="cartContainer">
         )
         
     })}
+        <div>{cartTotal}</div>
+        <div>Total Quantity: {cart.length}</div>
 </div>
 </div>
 
@@ -50,3 +52,4 @@ return(<div className="cartContainer">
 
 export default Cart
 
+// reduceCart function wasn't initially because i forgot to add ID to item
