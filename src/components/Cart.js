@@ -53,3 +53,4 @@ return(<div className="cartContainer">
 export default Cart
 
 // reduceCart function wasn't initially because i forgot to add ID to item
+// focus on the functionality part of the assignment
